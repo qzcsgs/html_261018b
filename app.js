@@ -16,31 +16,21 @@ const ITEMS = [
     detailImgs: ["images/1/1.jpg", "images/1/2.jpg"]
   },
   {
-    title: "林间之光",
-    name: "Pivot_Side-pivoting_©Architecture-Workshop",
-    text: "正午的阳光穿过密林，在铺满落叶的地面上投下斑驳的光影。空气里浮动着细小的尘埃，每一片叶子都在光里透亮，森林安静而丰茂。",
+    name: "Foodography_Kitchen Adrienne_©Architecture-Workshop",
+    text: "Foodography_Kitchen Adrienne_©Architecture-Workshop",
     img: "images/2.jpg",
     detailImgs: []
   },
   {
-    title: "城市夜雨",
     name: "Prolog_Living-Room-day_©Architecture-Workshop",
-    text: "雨夜的街道被霓虹染成流动的彩色河流，行人撑着伞匆匆走过，车灯在湿漉漉的柏油路面上拖出长长的倒影。城市在雨声里显出难得的温柔。",
+    text: "Prolog_Living-Room-day_©Architecture-Workshop",
     img: "images/3.jpg",
     detailImgs: []
   },
   {
-    title: "沙漠曲线",
-    name: "Transformer_Sliding-wall-in-motion",
-    text: "风是沙漠的雕刻师。沙丘的脊线在阳光下划出锋利的明暗分界，金色与阴影交替延展到天边，极简、辽阔，带着沉默的力量感。",
+    name: "Pivot_Side-pivoting_©Architecture-Workshop",
+    text: "Pivot_Side-pivoting_©Architecture-Workshop",
     img: "images/4.jpg",
-    detailImgs: []
-  },
-  {
-    title: "海岸孤灯",
-    name: "Foodography_Kitchen Adrienne_©Architecture-Workshop",
-    text: "夜幕降临前的海岸，灯塔亮起第一束光。海浪一遍遍拍打着礁石，白色的浪花在深蓝色的海面上绽放又消散，像一场永不停歇的仪式。",
-    img: "images/5.jpg",
     detailImgs: []
   },
 ];
