@@ -1,5 +1,6 @@
 :root {
   --padding-22: calc(100vh / 22);
+  --padding-16: calc(100vw / 16);
 }
 
 * {
@@ -81,7 +82,7 @@ body.zone-cursor * {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 22px;
   color: #fff;
   transition: opacity .6s ease, visibility .6s ease;
 }
@@ -110,7 +111,7 @@ body.detail .text-ui {
   z-index: 999;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  font-size: 18px;
+  font-size: 22px;
   letter-spacing: 0.25em;
   color: #fff;
   opacity: 0;
@@ -144,30 +145,41 @@ body.detail .text-ui {
 }
 
 .content p {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 300;
 }
 
 .content .contentText {
   position: relative;
-  margin-top: var(--padding-22);
   /* 按单词换行 */
   word-break: break-word;
   line-height: normal;
+  padding: 0 var(--padding-16);
+}
+
+.content .contentText.first {
+  margin-top: var(--padding-22);
 }
 
 .text-next {
   cursor: pointer;
   color: #333333;
-  font-size: 16px;
+  font-size: 22px;
   position: absolute;
-  top: 0;
-  transform: translateX(100%);
-  right: calc(var(--padding-22) * -2);
+  top: 50%;
+  transform: translate(100%, -50%);
+  right: 0;
+  text-decoration: underline;
+  height: 800px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  /* background: rgba(255, 25, 25, 0.5); */
 }
 
 .text-next:hover {
-  text-decoration: underline;
+  opacity: 1;
 }
 
 #contentImg {

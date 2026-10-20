@@ -188,17 +188,22 @@ function updateContent() {
       cImgs.appendChild(imgElement);
     });
     contentInner.querySelectorAll("p.contentText").forEach((p) => p.remove());
+    contentInner.querySelectorAll("br").forEach((p) => p.remove());
     const texts = Array.isArray(item.text) ? item.text : [item.text];
     let centerIndex = Math.floor(texts.length / 2);
     texts.forEach((text, i) => {
       const pElement = document.createElement("p");
       pElement.classList.add("contentText");
+      if (i == 0) {
+        pElement.classList.add("first");
+      }
       if (i == centerIndex) {
         pElement.innerHTML = text + `<div class="text-next">Next Project</div>`;
       } else {
         pElement.innerHTML = text;
       }
       contentInner.appendChild(pElement);
+      contentInner.appendChild(document.createElement("br"));
     });
   }, 100);
 }
