@@ -100,8 +100,8 @@ let zone = 0; // -1 prev, 0 none, 1 next
 document.addEventListener("mousemove", (e) => {
   const w = window.innerWidth;
   const overHero = view === "top" && e.clientY <= hero.getBoundingClientRect().bottom && e.clientY >= 0;
-  if (overHero && e.clientX < w / 6) zone = -1;
-  else if (overHero && e.clientX > (w * 5) / 6) zone = 1;
+  if (overHero && e.clientX < w / 8) zone = -1;
+  else if (overHero && e.clientX > (w * 7) / 8) zone = 1;
   else zone = 0;
 
   if (zone !== 0) {

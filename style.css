@@ -112,7 +112,6 @@ body.detail .text-ui {
   transform: translate(-50%, -50%);
   font-size: 18px;
   letter-spacing: 0.25em;
-  text-transform: uppercase;
   color: #fff;
   opacity: 0;
   transition: opacity .25s ease;
@@ -154,6 +153,7 @@ body.detail .text-ui {
   margin-top: var(--padding-22);
   /* 按单词换行 */
   word-break: break-word;
+  line-height: normal;
 }
 
 .text-next {
