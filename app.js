@@ -3,7 +3,7 @@ const ITEMS = [
   {
     name: "Ammunition_Clerestory_©Architecture-Workshop",
     text: [
-      "Robert Eric<br>Lantern<br>2024",
+      "Robert Eric<br>2024",
       `Lantern is an 1800s Tribeca loft with 12ft concrete ceilings and windows on both ends of the 100ft long space. The client needed to accommodate a growing family with three kids.
       The first action was to replace it with new windows tripled in size to let in more sunlight.
       The primary design intent was to highlight and bring daylight deep into the middle of the apartment by maximizing the flow of light through all the rooms. The solution was to limit walls to 8ft and add a ribbon of clerestory above to let light permeate throughout. Continuous LED lighting along the glass creates a soft lantern glow bringing the impression of daylight. 
@@ -13,25 +13,29 @@ const ITEMS = [
       `In the large common living space a pair of pivoting walls open to accommodate overnight guests with a wall-bed and a closet, as well as a concealed play area.`,
     ],
     img: "images/1.jpg",
-    detailImgs: ["images/1/1.jpg", "images/1/2.jpg"]
+    detailImgs: ["images/1/1.jpg", "images/1/2.jpg"],
+    gridImgs: ["images/1/grid/1.jpg", "images/1/grid/2.jpg", "images/1/grid/3.jpg", "images/1/grid/4.jpg", "images/1/grid/5.jpg", "images/1/grid/6.jpg"]
   },
   {
     name: "Foodography_Kitchen Adrienne_©Architecture-Workshop",
     text: "Foodography_Kitchen Adrienne_©Architecture-Workshop",
     img: "images/2.jpg",
-    detailImgs: []
+    detailImgs: [],
+    gridImgs: []
   },
   {
     name: "Prolog_Living-Room-day_©Architecture-Workshop",
     text: "Prolog_Living-Room-day_©Architecture-Workshop",
     img: "images/3.jpg",
-    detailImgs: []
+    detailImgs: [],
+    gridImgs: []
   },
   {
     name: "Pivot_Side-pivoting_©Architecture-Workshop",
     text: "Pivot_Side-pivoting_©Architecture-Workshop",
     img: "images/4.jpg",
-    detailImgs: []
+    detailImgs: [],
+    gridImgs: []
   },
 ];
 
@@ -169,6 +173,8 @@ document.addEventListener("click", (e) => {
 
 /* 下方内容 */
 const contentInner = document.getElementById("contentInner");
+const contentTextWrapper = document.getElementById("contentTextWrapper");
+const grids = document.getElementById("grids");
 const cName = document.getElementById("name");
 const cImgs = document.getElementById("contentImg");
 
@@ -187,8 +193,9 @@ function updateContent() {
       imgElement.draggable = false;
       cImgs.appendChild(imgElement);
     });
-    contentInner.querySelectorAll("p.contentText").forEach((p) => p.remove());
-    contentInner.querySelectorAll("br").forEach((p) => p.remove());
+    grids.innerHTML = item.gridImgs.map((img) => `<img src="${img}">`).join("");
+    contentTextWrapper.querySelectorAll("p.contentText").forEach((p) => p.remove());
+    contentTextWrapper.querySelectorAll("br").forEach((p) => p.remove());
     const texts = Array.isArray(item.text) ? item.text : [item.text];
     let centerIndex = Math.floor(texts.length / 2);
     texts.forEach((text, i) => {
@@ -198,12 +205,12 @@ function updateContent() {
         pElement.classList.add("first");
       }
       if (i == centerIndex) {
-        pElement.innerHTML = text + `<div class="text-next">Next Project</div>`;
+        pElement.innerHTML = text;
       } else {
         pElement.innerHTML = text;
       }
-      contentInner.appendChild(pElement);
-      contentInner.appendChild(document.createElement("br"));
+      contentTextWrapper.appendChild(pElement);
+      contentTextWrapper.appendChild(document.createElement("br"));
     });
   }, 100);
 }

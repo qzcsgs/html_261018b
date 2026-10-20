@@ -94,13 +94,13 @@ body.detail .text-ui {
 }
 
 .text-ui .studio-name,
-.text-ui .selected-archive {
+.text-ui .selected-archive span {
   margin-bottom: 24px;
   cursor: pointer;
 }
 
 .text-ui .studio-name:hover,
-.text-ui .selected-archive:hover {
+.text-ui .selected-archive span:hover {
   text-decoration: underline;
 }
 
@@ -112,7 +112,6 @@ body.detail .text-ui {
   pointer-events: none;
   transform: translate(-50%, -50%);
   font-size: 22px;
-  letter-spacing: 0.25em;
   color: #fff;
   opacity: 0;
   transition: opacity .25s ease;
@@ -169,8 +168,9 @@ body.detail .text-ui {
   top: 50%;
   transform: translate(100%, -50%);
   right: 0;
+  padding-left: calc(var(--padding-16) / 2);
   text-decoration: underline;
-  height: 800px;
+  height: 100%;
   width: 500px;
   display: flex;
   align-items: center;
@@ -188,5 +188,20 @@ body.detail .text-ui {
 
 #contentImg img {
   width: 100%;
+  height: auto;
+}
+
+#contentTextWrapper {
+  position: relative;
+}
+
+#grids {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#grids img {
+  width: calc(calc(100% - 50px) / 6);
   height: auto;
 }
