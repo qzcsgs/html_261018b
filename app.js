@@ -3,7 +3,7 @@ const ITEMS = [
   {
     name: "Ammunition_Clerestory_©Architecture-Workshop",
     text: [
-      "Robert Eric<br>2024",
+      "Robert Garneau, Eric Ansel<br>2024",
       `Lantern is an 1800s Tribeca loft with 12ft concrete ceilings and windows on both ends of the 100ft long space. The client needed to accommodate a growing family with three kids.
       The first action was to replace it with new windows tripled in size to let in more sunlight.
       The primary design intent was to highlight and bring daylight deep into the middle of the apartment by maximizing the flow of light through all the rooms. The solution was to limit walls to 8ft and add a ribbon of clerestory above to let light permeate throughout. Continuous LED lighting along the glass creates a soft lantern glow bringing the impression of daylight. 
@@ -78,6 +78,8 @@ function position(animate = true) {
   slides.forEach((s, i) => s.classList.toggle("active", i === index));
   const textUI = document.querySelector(".text-ui");
   const nameDom = document.getElementById("name");
+  const textNext = document.querySelector(".text-next");
+  textNext.style.left = (window.innerWidth - target.offsetWidth) / 2 + target.offsetWidth + "px";
   textUI.style.width = target.offsetWidth + "px";
   textUI.style.height = target.offsetHeight + "px";
   nameDom.style.width = target.offsetWidth + "px";

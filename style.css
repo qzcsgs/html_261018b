@@ -138,7 +138,7 @@ body.detail .text-ui {
 }
 
 .content-inner {
-  padding-bottom: calc(var(--padding-22) * 2);
+  padding-bottom: calc(var(--padding-22) * 3);
 }
 
 .content-inner.visible {
@@ -170,24 +170,24 @@ body.detail .text-ui {
 }
 
 .text-next {
+  position: fixed;
   cursor: pointer;
   color: #333333;
   font-size: 22px;
-  position: absolute;
-  top: 50%;
-  transform: translate(100%, -50%);
+  top: 0;
+  bottom: 0;
   right: 0;
   padding-left: calc(var(--padding-16) / 2);
-  text-decoration: underline;
-  height: 100%;
-  width: 500px;
   display: flex;
   align-items: center;
   opacity: 0;
-  /* background: rgba(255, 25, 25, 0.5); */
 }
 
-.text-next:hover {
+.text-next div:hover {
+  text-decoration: underline;
+}
+
+body.detail .text-next:hover {
   opacity: 1;
 }
 
