@@ -79,9 +79,6 @@ body.zone-cursor * {
   transform: translateX(-50%);
   z-index: 999;
   padding: var(--padding-22);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   font-size: 22px;
   color: #fff;
   transition: opacity .6s ease, visibility .6s ease;
@@ -102,6 +99,17 @@ body.detail .text-ui {
 .text-ui .studio-name:hover,
 .text-ui .selected-archive span:hover {
   text-decoration: underline;
+}
+
+#name {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: var(--padding-22);
+  z-index: 999;
+  font-size: 22px;
+  color: #fff;
+  padding-left: var(--padding-22);
 }
 
 .cursor-label {

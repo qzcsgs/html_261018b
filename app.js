@@ -77,8 +77,10 @@ function position(animate = true) {
   }
   slides.forEach((s, i) => s.classList.toggle("active", i === index));
   const textUI = document.querySelector(".text-ui");
+  const nameDom = document.getElementById("name");
   textUI.style.width = target.offsetWidth + "px";
   textUI.style.height = target.offsetHeight + "px";
+  nameDom.style.width = target.offsetWidth + "px";
   document.querySelector(".content").style.width = target.offsetWidth + "px";
 }
 
