@@ -110,6 +110,7 @@ body.detail .text-ui {
   font-size: 22px;
   color: #fff;
   padding-left: var(--padding-22);
+  mix-blend-mode: difference;
 }
 
 .cursor-label {
