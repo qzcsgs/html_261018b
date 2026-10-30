@@ -16,7 +16,7 @@ html {
 
 @font-face {
   font-family: "Protocol";
-  src: url("protocoleregular.otf") format("opentype");
+  src: url("../protocoleregular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -38,19 +38,6 @@ body {
   overflow-x: hidden;
   padding: 0 var(--page-padding);
   font-size: 24px;
-}
-
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 var(--page-padding) 0;
-  height: var(--padding-h);
 }
 
 .underline {
