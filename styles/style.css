@@ -1,13 +1,13 @@
 :root {
   --padding-h: calc(100vh / 22);
   --padding-w: calc(100vw / 16);
+  --page-padding: 32px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 0.8;
 }
 
 html {
@@ -21,9 +21,38 @@ html {
   font-style: normal;
 }
 
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 body {
   background: #f5f5f5;
   color: #333333;
   font-family: "Protocol", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-x: hidden;
+  padding: 0 var(--page-padding);
+  font-size: 24px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 var(--page-padding) 0;
+  height: var(--padding-h);
+}
+
+.underline {
+  text-decoration: underline;
 }
