@@ -24,12 +24,12 @@ const homeImgData = [
         detail: ['test test test test test test'],
         class: 'img-width'
     },
-      {
+    {
         img: 'images/6.jpg',
         detail: ['test test test test test test'],
         class: 'img-height'
     },
-     {
+    {
         img: 'images/7.jpg',
         detail: ['test test test test test test'],
         class: 'img-width'
@@ -56,4 +56,16 @@ homeImgData.forEach(({ img, detail, class: imgClass }) => {
 
     homeImg.append(imgWrap, homeImgDetail);
     homeImgList.appendChild(homeImg);
+});
+
+const grid = document.querySelector('.grid');
+
+document.addEventListener('keydown', (e) => {
+    if (e.key == '1') {
+        grid.classList.toggle('h');
+        grid.classList.remove('w');
+    } else if (e.key == '2') {
+        grid.classList.toggle('w');
+        grid.classList.remove('h');
+    }
 });

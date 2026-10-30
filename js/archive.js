@@ -152,4 +152,13 @@ filterData.forEach(({ label, key, options }) => {
 
 renderArchiveList();
 
+const grid = document.querySelector('.grid');
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === '1') {
+        grid.classList.toggle('h');
+    } else if (e.key === '2') {
+        grid.classList.toggle('w');
+    }
+});
 

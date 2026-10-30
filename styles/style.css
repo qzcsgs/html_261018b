@@ -1,6 +1,7 @@
 :root {
   --padding-h: calc(100vh / 22);
   --padding-w: calc(100vw / 16);
+  --padding-8w: calc(calc(100vw - 64px) / 8);
   --page-padding: 32px;
 }
 
@@ -38,8 +39,36 @@ body {
   overflow-x: hidden;
   padding: 0 var(--page-padding);
   font-size: 24px;
+  position: relative;
 }
 
 .underline {
   text-decoration: underline;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: var(--page-padding);
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.grid.h {
+  background-image:
+    repeating-linear-gradient(to bottom,
+      rgba(111, 204, 220, 0.6) 0,
+      rgba(111, 204, 220, 0.6) 1px,
+      transparent 1px,
+      transparent var(--padding-h));
+}
+
+.grid.w {
+  background-image:
+    repeating-linear-gradient(to right,
+      rgba(111, 204, 220, 0.6) 0,
+      rgba(111, 204, 220, 0.6) 1px,
+      transparent 1px,
+      transparent var(--padding-8w));
 }
