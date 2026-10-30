@@ -1,8 +1,9 @@
 :root {
   --padding-h: calc(100vh / 22);
   --padding-w: calc(100vw / 16);
-  --padding-8w: calc(calc(100vw - 64px) / 8);
   --page-padding: 32px;
+  --page-padding-2: calc(var(--page-padding) * 2);
+  --padding-8w: calc(calc(100vw - var(--page-padding-2)) / 8);
 }
 
 * {
@@ -71,4 +72,27 @@ body {
       rgba(111, 204, 220, 0.6) 1px,
       transparent 1px,
       transparent var(--padding-8w));
+}
+
+.page-padding-indicator {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.page-padding-indicator.left {
+  left: 8px;
+}
+
+.page-padding-indicator.right {
+  right: 8px;
+}
+
+.page-padding-indicator.visible {
+  opacity: 1;
 }
