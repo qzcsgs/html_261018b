@@ -16,7 +16,7 @@ function updatePagePadding(delta) {
     document.documentElement.style.setProperty('--page-padding', `${pagePadding}px`);
 
     paddingIndicators.forEach((indicator) => {
-        indicator.textContent = `${pagePadding}px`;
+        indicator.textContent = `${pagePadding}`;
         indicator.classList.add('visible');
     });
 
