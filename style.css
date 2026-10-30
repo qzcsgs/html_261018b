@@ -1,6 +1,6 @@
 :root {
-  --padding-22: calc(100vh / 22);
-  --padding-16: calc(100vw / 16);
+  --padding-h: calc(100vh / 22);
+  --padding-w: calc(100vw / 16);
 }
 
 * {
@@ -15,8 +15,8 @@ html {
 }
 
 @font-face {
-  font-family: "Syndicat Grotesk";
-  src: url("SyndicatGrotesk-Regular.otf") format("opentype");
+  font-family: "Protocol";
+  src: url("protocoleregular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -24,193 +24,6 @@ html {
 body {
   background: #f5f5f5;
   color: #333333;
-  font-family: "Syndicat Grotesk", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Protocol", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-x: hidden;
-}
-
-/* 首屏：图片横移列表 */
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
-
-.track {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  will-change: transform;
-}
-
-.track.no-anim {
-  transition: none !important;
-}
-
-.slide {
-  flex: 0 0 auto;
-  display: block;
-  height: 100vh;
-  width: auto;
-  transition: opacity .6s ease;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-/* 详情模式：隐藏主图以外的图片 */
-body.detail .slide:not(.active) {
-  opacity: 0;
-}
-
-/* 自定义鼠标文字 */
-body.zone-cursor,
-body.zone-cursor * {
-  cursor: none !important;
-}
-
-.text-ui {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  padding: var(--padding-22);
-  font-size: 22px;
-  color: #fff;
-  transition: opacity .6s ease, visibility .6s ease;
-}
-
-/* 详情模式：隐藏文字层 */
-body.detail .text-ui {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.text-ui .studio-name,
-.text-ui .selected-archive span {
-  margin-bottom: 24px;
-  cursor: pointer;
-}
-
-.text-ui .studio-name:hover,
-.text-ui .selected-archive span:hover {
-  text-decoration: underline;
-}
-
-#name {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: var(--padding-22);
-  z-index: 999;
-  font-size: 22px;
-  color: #fff;
-  padding-left: var(--padding-22);
-  mix-blend-mode: difference;
-}
-
-.cursor-label {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  font-size: 22px;
-  color: #fff;
-  opacity: 0;
-  transition: opacity .25s ease;
-  white-space: nowrap;
-}
-
-.cursor-label.show {
-  opacity: 1;
-}
-
-/* 下方内容区 */
-.content {
-  min-height: 70vh;
-  margin: 0 auto;
-}
-
-.content-inner {
-  padding-bottom: calc(var(--padding-22) * 3);
-}
-
-.content-inner.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.content h2 {
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 300;
-  margin-bottom: 24px;
-}
-
-.content p {
-  font-size: 22px;
-  font-weight: 300;
-}
-
-.content .contentText {
-  position: relative;
-  /* 按单词换行 */
-  word-break: break-word;
-  line-height: normal;
-  padding: 0 var(--padding-16);
-}
-
-.content .contentText.first {
-  margin-top: var(--padding-22);
-}
-
-.text-next {
-  position: fixed;
-  cursor: pointer;
-  color: #333333;
-  font-size: 22px;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding-left: calc(var(--padding-16) / 2);
-  display: flex;
-  align-items: center;
-  opacity: 0;
-}
-
-.text-next div:hover {
-  text-decoration: underline;
-}
-
-body.detail .text-next:hover {
-  opacity: 1;
-}
-
-#contentImg {
-  font-size: 0;
-}
-
-#contentImg img {
-  width: 100%;
-  height: auto;
-}
-
-#contentTextWrapper {
-  position: relative;
-}
-
-#grids {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-#grids img {
-  width: calc(calc(100% - 50px) / 6);
-  height: auto;
 }
