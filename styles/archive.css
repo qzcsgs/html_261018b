@@ -1,12 +1,10 @@
 header {
-  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 100;
   display: flex;
   align-items: flex-end;
-  padding: 0 var(--page-padding) 0;
   height: var(--padding-h);
 }
 
@@ -50,4 +48,48 @@ header .actions {
 
 .dropdown.open .dropdown-menu {
   max-height: 200px;
+}
+
+.archive-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: calc(var(--padding-h) * 5);
+}
+
+.archive-item {
+  position: relative;
+  --archive-real-width: calc(100% - var(--page-padding) * 3);
+  width: calc(var(--archive-real-width) / 4);
+  height: calc(var(--padding-h) * 6);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--padding-h);
+  cursor: pointer;
+}
+
+.archive-item.empty {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.archive-item-detail {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  background-color: transparent;
+}
+
+.archive-item-detail:hover {
+  opacity: 1;
+  transition: all 0.15s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.5);
 }
