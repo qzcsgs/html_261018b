@@ -4,6 +4,7 @@
   --page-padding: 32px;
   --page-padding-2: calc(var(--page-padding) * 2);
   --padding-8w: calc(calc(100vw - var(--page-padding-2)) / 8);
+  --global-fs: 24px;
 }
 
 * {
@@ -39,7 +40,7 @@ body {
   font-family: "Protocol", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-x: hidden;
   padding: 0 var(--page-padding);
-  font-size: 24px;
+  font-size: var(--global-fs);
   position: relative;
 }
 
