@@ -80,6 +80,8 @@ function renderArchiveList() {
         data.sort((a, b) => Number(b.year) - Number(a.year));
     } else if (filters.time == 'From Old to New') {
         data.sort((a, b) => Number(a.year) - Number(b.year));
+    } else {
+        data.sort((a, b) => a.detail[0].localeCompare(b.detail[0]));
     }
 
     archiveList.innerHTML = '';
