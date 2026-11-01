@@ -73,12 +73,12 @@ function renderArchiveList() {
     let data = archiveData.slice();
 
     if (filters.category) {
-        data = data.filter((item) => item.category === filters.category);
+        data = data.filter((item) => item.category == filters.category);
     }
 
-    if (filters.time === 'From new to old') {
+    if (filters.time == 'From new to old') {
         data.sort((a, b) => Number(b.year) - Number(a.year));
-    } else if (filters.time === 'From Old to New') {
+    } else if (filters.time == 'From Old to New') {
         data.sort((a, b) => Number(a.year) - Number(b.year));
     }
 
@@ -142,19 +142,44 @@ filterData.forEach(({ label, key, options }) => {
     options.forEach((option) => {
         const item = document.createElement('div');
         item.className = 'dropdown-option';
-        item.textContent = option;
+
+        const text = document.createElement('span');
+        text.className = 'option-text';
+        text.textContent = option;
+        const clear = document.createElement('span');
+        clear.className = 'clear-selection';
+        clear.textContent = 'x';
+        item.append(text, clear);
+
         item.addEventListener('click', (e) => {
             e.stopPropagation();
             rollText.textContent = option;
             rollCopy.textContent = option;
             toggle.classList.add('underline');
+            menu.querySelectorAll('.dropdown-option').forEach((el) => el.classList.remove('selected'));
+            item.classList.add('selected');
             dropdown.classList.remove('open');
 
-            if (key === 'category' || key === 'time') {
+            if (key == 'category' || key == 'time') {
                 filters[key] = option;
                 renderArchiveList();
             }
         });
+
+        clear.addEventListener('click', (e) => {
+            e.stopPropagation();
+            item.classList.remove('selected');
+            rollText.textContent = label;
+            rollCopy.textContent = label;
+            toggle.classList.remove('underline');
+            dropdown.classList.remove('open');
+
+            if (key == 'category' || key == 'time') {
+                filters[key] = null;
+                renderArchiveList();
+            }
+        });
+
         menu.appendChild(item);
     });
 

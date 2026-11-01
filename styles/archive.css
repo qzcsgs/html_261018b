@@ -58,8 +58,32 @@ header .actions .dropdown-menu {
   cursor: pointer;
 }
 
+.dropdown-option {
+  position: relative;
+  padding-right: 12px;
+}
+
 .dropdown-option:hover {
   text-decoration: underline;
+}
+
+.dropdown-option.selected .option-text {
+  text-decoration: underline;
+}
+
+.clear-selection {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+.clear-selection:hover {
+  text-decoration: underline;
+}
+
+.dropdown-option.selected .clear-selection {
+  display: block;
 }
 
 .dropdown-menu {
