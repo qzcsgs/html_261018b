@@ -47,6 +47,24 @@ function updateGlobalFs(delta) {
     toast(`${globalFs}px`);
 }
 
+let paddingH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--padding-h'), 10);
+
+function updatePaddingH(delta) {
+    paddingH = Math.max(1, paddingH + delta);
+    document.documentElement.style.setProperty('--padding-h', `${paddingH}px`);
+    toast(`${paddingH}px`);
+}
+
+/**
+ * 键盘事件
+ * @param {KeyboardEvent} e 
+ * @description 键盘事件处理函数
+ * 1：切换网格布局为水平方向
+ * 2：切换网格布局为垂直方向
+ * 左箭头/右箭头：页面左右边距
+ * Q/A：调整全局字体大小
+ * W/S：调整垂直间距
+ */
 document.addEventListener('keydown', (e) => {
     if (e.key == '1') {
         grid.classList.toggle('h');
@@ -62,6 +80,10 @@ document.addEventListener('keydown', (e) => {
         updateGlobalFs(1);
     } else if (e.key.toLowerCase() === 'a') {
         updateGlobalFs(-1);
+    } else if (e.key.toLowerCase() === 'w') {
+        updatePaddingH(1);
+    } else if (e.key.toLowerCase() === 's') {
+        updatePaddingH(-1);
     }
 });
 
