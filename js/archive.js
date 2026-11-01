@@ -204,4 +204,3 @@ filterData.forEach(({ label, key, options }) => {
 });
 
 renderArchiveList();
-syncArchiveLabelWidth();

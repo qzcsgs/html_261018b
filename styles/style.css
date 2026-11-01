@@ -153,3 +153,21 @@ body {
 .roll-hover:hover .roll-text {
   transform: translateY(-100%);
 }
+
+.flexJustifyCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexJustifyRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header .selected-archive {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

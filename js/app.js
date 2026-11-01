@@ -120,12 +120,15 @@ new MutationObserver((mutations) => {
 
 function syncArchiveLabelWidth() {
     const selectedArchive = document.querySelector('.selected-archive');
-    const selectedLink = selectedArchive.querySelector('a');
-    const archiveLabel = selectedArchive.querySelector('span');
+    const selectedLink = selectedArchive.querySelector('.selected');
+    const archiveLabel = selectedArchive.querySelector('.archive');
     archiveLabel.style.width = `${selectedLink.offsetWidth}px`;
+    console.log(1)
 }
 
 function updateHomeImgRatio() {
     const homeImgRatio = Math.round(window.innerHeight / paddingH);
     document.documentElement.style.setProperty('--home-img-ratio', homeImgRatio);
 }
+
+syncArchiveLabelWidth();    

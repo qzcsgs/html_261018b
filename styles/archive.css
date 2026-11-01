@@ -1,22 +1,27 @@
 header {
+  position: relative;
   width: 100%;
   padding-top: var(--padding-h);
-  z-index: 100;
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   line-height: 1;
 }
 
-header .studio-name,
-header .actions {
-  flex: 1;
-}
 
-header .actions {
+
+/* header .dot {
+  width: calc(var(--page-padding) / 2.5);
+  height: calc(var(--page-padding) / 2.5);
+  background-color: #000000;
+  border-radius: 50%;
+} */
+
+.filter .actions {
   display: flex;
 }
 
-header .actions .dropdown-menu {
+.dropdown-menu {
   line-height: normal;
 }
 
