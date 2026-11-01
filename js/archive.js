@@ -21,42 +21,42 @@ const archiveData = [
         cover: 'images/Archive/Residential/Seminary/1.jpg',
         hover: 'images/Archive/Residential/Seminary/2.jpg',
         category: 'Residential',
-        detail: ['Theological Seminary_Loft', 'Apartment Renovation', '2023'],
+        detail: ['Theological Seminary', 'Loft Apartment Renovation', '2023'],
         year: '2023'
     },
     {
         cover: 'images/Archive/Residential/Bridgehampton/1.jpg',
-        hover: 'images/Archive/Residential/Bridgehampton/2.jpg',        
+        hover: 'images/Archive/Residential/Bridgehampton/2.jpg',
         category: 'Residential',
-        detail: ['Bridgehampton_ Luxury', 'Summer House', '2026'],
+        detail: ['Bridgehampton', 'Luxury Summer House', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Residential/Prolog/2.jpg',
         hover: 'images/Archive/Residential/Prolog/3.jpg',
         category: 'Residential',
-        detail: ['Prolog_Studio', 'Apartment Renovation', '2026'],
+        detail: ['Prolog', 'Studio Apartment Renovation', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Workplace/Pivot/1.jpg',
         hover: 'images/Archive/Workplace/Pivot/2.jpg',
         category: 'Workplace',
-        detail: ['Pivot_Studio', 'Apartment Renovation', '2026'],
+        detail: ['Pivot', 'Studio Apartment Renovation', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Workplace/Transformer/1.jpg',
         hover: 'images/Archive/Workplace/Transformer/2.jpg',
         category: 'Workplace',
-        detail: ['Transformer_Studio', 'Apartment Renovation', '2026'],
+        detail: ['Transformer', 'Studio Apartment Renovation', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Workplace/Fooddography/1.jpg',
         hover: 'images/Archive/Workplace/Fooddography/2.jpg',
         category: 'Workplace',
-        detail: ['Fooddography_Studio', 'Apartment Renovation', '2026'],
+        detail: ['Fooddography', 'Studio Apartment Renovation', '2026'],
         year: '2026'
     }
 ]
@@ -177,3 +177,4 @@ filterData.forEach(({ label, key, options }) => {
 });
 
 renderArchiveList();
+syncArchiveLabelWidth();

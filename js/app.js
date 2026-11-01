@@ -44,6 +44,7 @@ let globalFs = parseInt(getComputedStyle(document.documentElement).getPropertyVa
 function updateGlobalFs(delta) {
     globalFs = Math.max(1, globalFs + delta);
     document.documentElement.style.setProperty('--global-fs', `${globalFs}px`);
+    syncArchiveLabelWidth();
     toast(`${globalFs}px`);
 }
 
@@ -115,3 +116,10 @@ new MutationObserver((mutations) => {
         });
     });
 }).observe(document.body, { childList: true, subtree: true });
+
+function syncArchiveLabelWidth() {
+    const selectedArchive = document.querySelector('.selected-archive');
+    const selectedLink = selectedArchive.querySelector('a');
+    const archiveLabel = selectedArchive.querySelector('span');
+    archiveLabel.style.width = `${selectedLink.offsetWidth}px`;
+}
