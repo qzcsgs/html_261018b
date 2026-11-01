@@ -63,7 +63,7 @@ function updatePaddingH(delta) {
  * 2：切换网格布局为垂直方向
  * 左箭头/右箭头：页面左右边距
  * Q/A：调整全局字体大小
- * W/S：调整垂直间距
+ * E/D：调整垂直间距
  */
 document.addEventListener('keydown', (e) => {
     if (e.key == '1') {
@@ -80,9 +80,9 @@ document.addEventListener('keydown', (e) => {
         updateGlobalFs(1);
     } else if (e.key.toLowerCase() === 'a') {
         updateGlobalFs(-1);
-    } else if (e.key.toLowerCase() === 'w') {
+    } else if (e.key.toLowerCase() === 'e') {
         updatePaddingH(1);
-    } else if (e.key.toLowerCase() === 's') {
+    } else if (e.key.toLowerCase() === 'd') {
         updatePaddingH(-1);
     }
 });

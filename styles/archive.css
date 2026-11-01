@@ -1,7 +1,6 @@
 header {
   width: 100%;
-  top: var(--padding-h);
-  left: 0;
+  padding-top: var(--padding-h);
   z-index: 100;
   display: flex;
   align-items: flex-end;
@@ -75,18 +74,44 @@ header .actions {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-top: calc(var(--padding-h) * 5);
+  padding-top: calc(var(--archive-list-pt) - 5px);
 }
 
 .archive-item {
   position: relative;
   --archive-real-width: calc(100% - var(--page-padding) * 3);
   width: calc(var(--archive-real-width) / 4);
-  height: calc(var(--padding-h) * 6);
   background-size: cover;
   background-position: center;
   margin-bottom: var(--padding-h);
   cursor: pointer;
+}
+
+.archive-item .cover {
+  width: 100%;
+  height: calc(var(--padding-h) * 14);
+  object-fit: cover;
+}
+
+.archive-item .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.archive-item .hover-img img {
+  width: 100%;
+  height: calc(var(--padding-h) * 14);
+  object-fit: cover;
+  display: block;
+}
+
+.archive-item:hover .hover-img {
+  height: calc(var(--padding-h) * 14);
 }
 
 .archive-item.empty {
@@ -95,22 +120,7 @@ header .actions {
 }
 
 .archive-item-detail {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  right: 0%;
-  bottom: 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-  background-color: transparent;
-}
-
-.archive-item-detail:hover {
-  opacity: 1;
-  transition: all 0.15s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.5);
 }

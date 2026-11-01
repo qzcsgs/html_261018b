@@ -19,36 +19,42 @@ const filterData = [
 const archiveData = [
     {
         cover: 'images/Archive/Residential/Seminary/1.jpg',
+        hover: 'images/Archive/Residential/Seminary/2.jpg',
         category: 'Residential',
         detail: ['Theological Seminary_Loft', 'Apartment Renovation', '2023'],
         year: '2023'
     },
     {
         cover: 'images/Archive/Residential/Bridgehampton/1.jpg',
+        hover: 'images/Archive/Residential/Bridgehampton/2.jpg',        
         category: 'Residential',
         detail: ['Bridgehampton_ Luxury', 'Summer House', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Residential/Prolog/2.jpg',
+        hover: 'images/Archive/Residential/Prolog/3.jpg',
         category: 'Residential',
         detail: ['Prolog_Studio', 'Apartment Renovation', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Workplace/Pivot/1.jpg',
+        hover: 'images/Archive/Workplace/Pivot/2.jpg',
         category: 'Workplace',
         detail: ['Pivot_Studio', 'Apartment Renovation', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Workplace/Transformer/1.jpg',
+        hover: 'images/Archive/Workplace/Transformer/2.jpg',
         category: 'Workplace',
         detail: ['Transformer_Studio', 'Apartment Renovation', '2026'],
         year: '2026'
     },
     {
         cover: 'images/Archive/Workplace/Fooddography/1.jpg',
+        hover: 'images/Archive/Workplace/Fooddography/2.jpg',
         category: 'Workplace',
         detail: ['Fooddography_Studio', 'Apartment Renovation', '2026'],
         year: '2026'
@@ -78,10 +84,20 @@ function renderArchiveList() {
 
     archiveList.innerHTML = '';
 
-    data.forEach(({ cover, detail }) => {
+    data.forEach(({ cover, hover, detail }) => {
         const archiveItem = document.createElement('div');
         archiveItem.className = 'archive-item';
-        archiveItem.style.backgroundImage = `url(${cover})`;
+        const archiveImg = document.createElement('img');
+        archiveImg.src = cover;
+        archiveImg.className = 'cover';
+        archiveItem.appendChild(archiveImg);
+
+        const hoverWrap = document.createElement('div');
+        hoverWrap.className = 'hover-img';
+        const hoverImg = document.createElement('img');
+        hoverImg.src = hover;
+        hoverWrap.appendChild(hoverImg);
+        archiveItem.appendChild(hoverWrap);
 
         const archiveItemDetail = document.createElement('div');
         archiveItemDetail.className = 'archive-item-detail';
