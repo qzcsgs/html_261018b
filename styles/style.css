@@ -1,10 +1,10 @@
 :root {
-  --padding-h: calc(100vh / 22);
+  --padding-h: 15px;
   --padding-w: calc(100vw / 16);
-  --page-padding: 32px;
+  --page-padding: 15px;
   --page-padding-2: calc(var(--page-padding) * 2);
   --padding-8w: calc(calc(100vw - var(--page-padding-2)) / 8);
-  --global-fs: 24px;
+  --global-fs: 20px;
 }
 
 * {

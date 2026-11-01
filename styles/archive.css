@@ -1,11 +1,11 @@
 header {
   width: 100%;
-  top: 0;
+  top: var(--padding-h);
   left: 0;
   z-index: 100;
   display: flex;
   align-items: flex-end;
-  height: var(--padding-h);
+  line-height: 1;
 }
 
 header .studio-name,

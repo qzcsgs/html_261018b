@@ -55,12 +55,12 @@ footer {
 header {
   position: fixed;
   width: 100%;
-  top: 0;
+  top: var(--padding-h);
   left: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding: 0 var(--page-padding) 0;
-  height: var(--padding-h);
+  line-height: 1;
 }
