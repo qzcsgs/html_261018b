@@ -63,4 +63,9 @@ header {
   align-items: flex-end;
   padding: 0 var(--page-padding) 0;
   line-height: 1;
+  mix-blend-mode: difference;
+}
+
+header * {
+  color: #ccc !important;
 }
