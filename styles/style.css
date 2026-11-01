@@ -130,3 +130,25 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.roll-hover {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.roll-text {
+  position: relative;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.roll-copy {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.roll-hover:hover .roll-text {
+  transform: translateY(-100%);
+}
