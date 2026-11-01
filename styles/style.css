@@ -6,6 +6,7 @@
   --padding-8w: calc(calc(100vw - var(--page-padding-2)) / 8);
   --global-fs: 20px;
   --archive-list-pt: calc(var(--padding-h) * 12);
+  --home-img-ratio: 65;
 }
 
 * {

@@ -117,7 +117,7 @@ header .actions .dropdown-menu {
 
 .archive-item .cover {
   width: 100%;
-  height: calc(var(--padding-h) * 14);
+  height: calc(var(--padding-h) * 16);
   object-fit: cover;
 }
 
@@ -133,13 +133,13 @@ header .actions .dropdown-menu {
 
 .archive-item .hover-img img {
   width: 100%;
-  height: calc(var(--padding-h) * 14);
+  height: calc(var(--padding-h) * 16);
   object-fit: cover;
   display: block;
 }
 
 .archive-item:hover .hover-img {
-  height: calc(var(--padding-h) * 14);
+  height: calc(var(--padding-h) * 16);
 }
 
 .archive-item.empty {

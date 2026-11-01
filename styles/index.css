@@ -5,12 +5,12 @@
 
 .img-height {
   width: 50%;
-  height: 100vh;
+  height: calc(var(--padding-h) * var(--home-img-ratio));
 }
 
 .img-width {
   width: 100%;
-  height: 100vh;
+  height: calc(var(--padding-h) * var(--home-img-ratio));
 }
 
 .img-wrap {

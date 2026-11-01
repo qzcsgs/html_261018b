@@ -54,6 +54,7 @@ function updatePaddingH(delta) {
     paddingH = Math.max(1, paddingH + delta);
     document.documentElement.style.setProperty('--padding-h', `${paddingH}px`);
     toast(`${paddingH}px`);
+    updateHomeImgRatio();
 }
 
 /**
@@ -122,4 +123,9 @@ function syncArchiveLabelWidth() {
     const selectedLink = selectedArchive.querySelector('a');
     const archiveLabel = selectedArchive.querySelector('span');
     archiveLabel.style.width = `${selectedLink.offsetWidth}px`;
+}
+
+function updateHomeImgRatio() {
+    const homeImgRatio = Math.round(window.innerHeight / paddingH);
+    document.documentElement.style.setProperty('--home-img-ratio', homeImgRatio);
 }

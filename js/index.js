@@ -57,3 +57,5 @@ homeImgData.forEach(({ img, detail, class: imgClass }) => {
     homeImg.append(imgWrap, homeImgDetail);
     homeImgList.appendChild(homeImg);
 });
+
+updateHomeImgRatio();
