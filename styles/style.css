@@ -35,7 +35,7 @@ a:hover {
 }
 
 body {
-  background: #f5f5f5;
+  background: #ffffff;
   color: #333333;
   font-family: "Protocol", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-x: hidden;
@@ -96,4 +96,36 @@ body {
 
 .page-padding-indicator.visible {
   opacity: 1;
+}
+
+.toast {
+  position: fixed;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.toast.visible {
+  opacity: 1;
+}
+
+.home-img,
+.archive-item:not(.empty) {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.home-img.reveal-visible,
+.archive-item.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

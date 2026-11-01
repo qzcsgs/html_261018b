@@ -11,27 +11,27 @@ const homeImgData = [
     },
     {
         img: 'images/3.jpg',
-        detail: ['test test test test test test'],
+        detail: ['Theological Seminary', 'Loft Aparment Renovation', '2023'],
         class: 'img-width'
     },
     {
         img: 'images/4.jpg',
-        detail: ['test test test test test test'],
+        detail: ['Theological Seminary', 'Loft Aparment Renovation', '2023'],
         class: 'img-height'
     },
     {
         img: 'images/5.jpg',
-        detail: ['test test test test test test'],
+        detail: ['Theological Seminary', 'Loft Aparment Renovation', '2023'],
         class: 'img-width'
     },
     {
         img: 'images/6.jpg',
-        detail: ['test test test test test test'],
+        detail: ['Theological Seminary', 'Loft Aparment Renovation', '2023'],
         class: 'img-height'
     },
     {
         img: 'images/7.jpg',
-        detail: ['test test test test test test'],
+        detail: ['Theological Seminary', 'Loft Aparment Renovation', '2023'],
         class: 'img-width'
     },
 ]

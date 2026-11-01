@@ -28,12 +28,33 @@ header .actions {
   position: relative;
 }
 
+.dropdown-toggle {
+  overflow: hidden;
+}
+
+.toggle-roll {
+  position: relative;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggle-copy {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  text-decoration: underline;
+}
+
+.dropdown-toggle:hover .toggle-roll {
+  transform: translateY(-100%);
+}
+
 .dropdown-toggle,
 .dropdown-option {
   cursor: pointer;
 }
 
-.dropdown-toggle:hover,
 .dropdown-option:hover {
   text-decoration: underline;
 }

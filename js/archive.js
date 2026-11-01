@@ -1,6 +1,6 @@
 const filterData = [
     {
-        label: 'Category',
+        label: 'Services',
         key: 'category',
         options: ['Cultural', 'Hospitality', 'Institutional', 'Residential', 'Workplace']
     },
@@ -32,7 +32,7 @@ const archiveData = [
     {
         cover: 'images/Archive/Residential/Prolog/2.jpg',
         category: 'Residential',
-        detail: ['Test Test', 'Test Test', '2026'],
+        detail: ['Prolog_Studio', 'Apartment Renovation', '2026'],
         year: '2026'
     },
     {
@@ -50,7 +50,7 @@ const archiveData = [
     {
         cover: 'images/Archive/Workplace/Fooddography/1.jpg',
         category: 'Workplace',
-        detail: ['Test Test', 'Test Test', '2026'],
+        detail: ['Fooddography_Studio', 'Apartment Renovation', '2026'],
         year: '2026'
     }
 ]
@@ -109,7 +109,16 @@ filterData.forEach(({ label, key, options }) => {
 
     const toggle = document.createElement('div');
     toggle.className = 'dropdown-toggle';
-    toggle.textContent = label;
+
+    const roll = document.createElement('span');
+    roll.className = 'toggle-roll';
+    const rollText = document.createElement('span');
+    rollText.textContent = label;
+    const rollCopy = document.createElement('span');
+    rollCopy.className = 'toggle-copy';
+    rollCopy.textContent = label;
+    roll.append(rollText, rollCopy);
+    toggle.appendChild(roll);
 
     const menu = document.createElement('div');
     menu.className = 'dropdown-menu';
@@ -120,7 +129,8 @@ filterData.forEach(({ label, key, options }) => {
         item.textContent = option;
         item.addEventListener('click', (e) => {
             e.stopPropagation();
-            toggle.textContent = option;
+            rollText.textContent = option;
+            rollCopy.textContent = option;
             toggle.classList.add('underline');
             dropdown.classList.remove('open');
 
