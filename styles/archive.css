@@ -22,6 +22,16 @@ header .dot.right {
   transform: translate(50%, -50%);
 }
 
+.filter {
+  position: relative;
+  display: flex;
+  margin-top: calc(var(--padding-h) * 9);
+}
+
+.filter .filter-title {
+  font-size: 46px;
+}
+
 .filter .actions {
   display: flex;
 }
@@ -31,10 +41,24 @@ header .dot.right {
 }
 
 .dropdown-wrap {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
   white-space: nowrap;
+  position: absolute;
+}
+
+.dropdown-wrap.index {
+  left: calc(var(--padding-8w) * 2);
+}
+
+.dropdown-wrap.category {
+  left: calc(var(--padding-8w) * 4);
+}
+
+.dropdown-wrap.location {
+  left: calc(var(--padding-8w) * 6);
+}
+
+.dropdown-wrap.time {
+  left: calc(var(--padding-8w) * 7);
 }
 
 .dropdown {

@@ -1,19 +1,24 @@
 const filterData = [
     {
+        label: 'View',
+        key: 'index',
+        options: ['Index', 'Images']
+    },
+    {
         label: 'Services',
         key: 'category',
-        options: ['Cultural', 'Hospitality', 'Institutional', 'Residential', 'Workplace']
+        options: ['Cultural', 'Institutional', 'Residential', 'Workplace']
+    },
+    {
+        label: 'Location',
+        key: 'location',
+        options: ['New York', 'Paris']
     },
     {
         label: 'Time',
         key: 'time',
-        options: ['From new to old', 'From Old to New']
+        options: ['Latest', 'Previous']
     },
-    {
-        label: 'Images/Index',
-        key: 'images',
-        options: ['12345', '23456', '34567']
-    }
 ];
 
 const archiveData = [
@@ -197,7 +202,7 @@ filterData.forEach(({ label, key, options }) => {
 
     dropdown.append(toggle, menu);
     const dropdownWrap = document.createElement('div');
-    dropdownWrap.className = 'dropdown-wrap';
+    dropdownWrap.className = 'dropdown-wrap ' + key;
     dropdownWrap.appendChild(dropdown);
     actions.appendChild(dropdownWrap);
     dropdowns.push(dropdown);
