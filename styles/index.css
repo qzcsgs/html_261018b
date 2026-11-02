@@ -16,6 +16,20 @@ header * {
   color: #ccc !important;
 }
 
+header .dot {
+  background-color: #ccc;
+}
+
+header .dot.left {
+  left: calc(var(--padding-8w) * 2 + var(--page-padding));
+  transform: translate(-50%, -50%);
+}
+
+header .dot.right {
+  right: calc(var(--padding-8w) * 2 + var(--page-padding));
+  transform: translate(50%, -50%);
+}
+
 .home-img {
   position: relative;
   margin: 0 auto calc(var(--padding-h) / 2);

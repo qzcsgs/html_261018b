@@ -171,3 +171,12 @@ header .selected-archive {
   left: 50%;
   transform: translateX(-50%);
 }
+
+header .dot {
+  position: absolute;
+  top: 50%;
+  width: calc(var(--page-padding) / 2.5);
+  height: calc(var(--page-padding) / 2.5);
+  background-color: #cccccc;
+  border-radius: 50%;
+}

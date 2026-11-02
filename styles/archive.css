@@ -1,21 +1,26 @@
 header {
   position: relative;
   width: 100%;
-  padding-top: var(--padding-h);
+  margin-top: var(--padding-h);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   line-height: 1;
 }
 
+header .dot {
+  background-color: #000;
+}
 
+header .dot.left {
+  left: calc(var(--padding-8w) * 2);
+  transform: translate(-50%, -50%);
+}
 
-/* header .dot {
-  width: calc(var(--page-padding) / 2.5);
-  height: calc(var(--page-padding) / 2.5);
-  background-color: #000000;
-  border-radius: 50%;
-} */
+header .dot.right {
+  right: calc(var(--padding-8w) * 2);
+  transform: translate(50%, -50%);
+}
 
 .filter .actions {
   display: flex;
