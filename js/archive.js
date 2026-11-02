@@ -119,6 +119,7 @@ const actions = document.querySelector('.actions');
 const dropdowns = [];
 const filters = {
     category: null,
+    location: null,
     time: null
 };
 let currentView = 'Images';
@@ -133,6 +134,7 @@ function setArchiveView(view) {
     currentView = view;
     archiveList.style.display = view === 'Images' ? 'flex' : 'none';
     archiveTextList.style.display = view === 'Index' ? 'block' : 'none';
+    renderArchiveList();
     syncBodyHeight();
 }
 
@@ -144,16 +146,28 @@ window.addEventListener('resize', syncBodyHeight);
 function renderArchiveList() {
     let data = archiveData.slice();
 
-    if (filters.category) {
-        data = data.filter((item) => item.category == filters.category);
+    data.sort((a, b) => a.detail[0].localeCompare(b.detail[0]));
+
+    if (currentView === 'Images') {
+        if (filters.category) {
+            data = data.filter((item) => item.category === filters.category);
+        }
+        if (filters.location) {
+            data = data.filter((item) => item.location === filters.location);
+        }
+    } else {
+        if (filters.category) {
+            data.sort((a, b) => Number(b.category === filters.category) - Number(a.category === filters.category));
+        }
+        if (filters.location) {
+            data.sort((a, b) => Number(b.location === filters.location) - Number(a.location === filters.location));
+        }
     }
 
-    if (filters.time == 'Latest') {
+    if (filters.time === 'Latest') {
         data.sort((a, b) => Number(b.year) - Number(a.year));
-    } else if (filters.time == 'Previous') {
+    } else if (filters.time === 'Previous') {
         data.sort((a, b) => Number(a.year) - Number(b.year));
-    } else {
-        data.sort((a, b) => a.detail[0].localeCompare(b.detail[0]));
     }
 
     archiveList.innerHTML = '';
@@ -287,7 +301,7 @@ filterData.forEach(({ label, key, options }) => {
 
             if (key === 'index') {
                 setArchiveView(option);
-            } else if (key == 'category' || key == 'time') {
+            } else if (key == 'category' || key == 'location' || key == 'time') {
                 filters[key] = option;
                 renderArchiveList();
             }
@@ -303,7 +317,7 @@ filterData.forEach(({ label, key, options }) => {
 
             if (key === 'index') {
                 setArchiveView('Index');
-            } else if (key == 'category' || key == 'time') {
+            } else if (key == 'category' || key == 'location' || key == 'time') {
                 filters[key] = null;
                 renderArchiveList();
             }
@@ -330,5 +344,4 @@ filterData.forEach(({ label, key, options }) => {
     dropdowns.push(dropdown);
 });
 
-renderArchiveList();
 setArchiveView('Images');

@@ -160,7 +160,9 @@ header .dot.right {
 .a-t-image img {
   position: absolute;
   left: 0;
-  width: calc(var(--padding-8w) * 2);
+  width: calc(var(--padding-8w) * 2 - calc(var(--page-padding) / 2));
+  height: calc(var(--padding-h) * 20);
+  object-fit: cover;
   display: none;
 }
 
@@ -216,7 +218,7 @@ header .dot.right {
 
 .archive-item {
   position: relative;
-  --archive-real-width: calc(100% - var(--page-padding) * 3);
+  --archive-real-width: calc(100% - var(--page-padding) * 1.5);
   width: calc(var(--archive-real-width) / 4);
   background-size: cover;
   background-position: center;
@@ -226,7 +228,7 @@ header .dot.right {
 
 .archive-item .cover {
   width: 100%;
-  height: calc(var(--padding-h) * 16);
+  height: calc(var(--padding-h) * 20);
   object-fit: cover;
 }
 
@@ -242,13 +244,13 @@ header .dot.right {
 
 .archive-item .hover-img img {
   width: 100%;
-  height: calc(var(--padding-h) * 16);
+  height: calc(var(--padding-h) * 20);
   object-fit: cover;
   display: block;
 }
 
 .archive-item:hover .hover-img {
-  height: calc(var(--padding-h) * 16);
+  height: calc(var(--padding-h) * 20);
 }
 
 .archive-item.empty {
