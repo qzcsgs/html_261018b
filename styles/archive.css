@@ -60,6 +60,14 @@ header .dot.right {
 
 .dropdown-wrap.time {
   left: calc(var(--padding-8w) * 7);
+  width: calc(var(--padding-8w) * 1);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-wrap.time .dropdown-menu {
+  transform: translateX(-33%);
+  text-align: right;
 }
 
 .dropdown {
@@ -132,6 +140,69 @@ header .dot.right {
 .dropdown.open .dropdown-menu {
   max-height: 200px;
 }
+
+.archive-text-list {
+  position: absolute;
+  top: var(--archive-list-pt);
+  left: var(--page-padding);
+  right: var(--page-padding);
+}
+
+.a-t-item {
+  display: flex;
+}
+
+.a-t-image {
+  position: relative;
+  width: calc(var(--padding-8w) * 2);
+}
+
+.a-t-image img {
+  position: absolute;
+  left: 0;
+  width: calc(var(--padding-8w) * 2);
+  display: none;
+}
+
+.a-t-image img.visible {
+  display: block;
+}
+
+.a-t-image img.top {
+  top: 0;
+}
+
+.a-t-image img.bottom {
+  bottom: 0;
+}
+
+.a-t-detail {
+  display: flex;
+  border-bottom: 1px solid transparent;
+}
+
+.a-t-detail:hover {
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+
+.a-t-name {
+  width: calc(var(--padding-8w) * 2);
+}
+
+.a-t-service {
+  width: calc(var(--padding-8w) * 2);
+}
+
+.a-t-location {
+  width: calc(var(--padding-8w) * 1);
+}
+
+.a-t-year {
+  width: calc(var(--padding-8w) * 1);
+  text-align: right;
+}
+
 
 .archive-list {
   position: absolute;

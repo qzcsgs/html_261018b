@@ -27,6 +27,7 @@ const archiveData = [
         hover: 'images/Archive/Residential/Seminary/2.jpg',
         category: 'Residential',
         detail: ['Theological Seminary', 'Loft Apartment Renovation', '2023'],
+        location: 'New York',
         year: '2023'
     },
     {
@@ -34,6 +35,7 @@ const archiveData = [
         hover: 'images/Archive/Residential/Bridgehampton/2.jpg',
         category: 'Residential',
         detail: ['Bridgehampton', 'Luxury Summer House', '2026'],
+        location: 'Paris',
         year: '2026'
     },
     {
@@ -41,6 +43,7 @@ const archiveData = [
         hover: 'images/Archive/Residential/Prolog/3.jpg',
         category: 'Residential',
         detail: ['Prolog', 'Studio Apartment Renovation', '2026'],
+        location: 'New York',
         year: '2026'
     },
     {
@@ -48,6 +51,7 @@ const archiveData = [
         hover: 'images/Archive/Workplace/Pivot/2.jpg',
         category: 'Workplace',
         detail: ['Pivot', 'Studio Apartment Renovation', '2026'],
+        location: 'New York',
         year: '2026'
     },
     {
@@ -55,6 +59,7 @@ const archiveData = [
         hover: 'images/Archive/Workplace/Transformer/2.jpg',
         category: 'Workplace',
         detail: ['Transformer', 'Studio Apartment Renovation', '2026'],
+        location: 'Paris',
         year: '2026'
     },
     {
@@ -62,24 +67,37 @@ const archiveData = [
         hover: 'images/Archive/Workplace/Fooddography/2.jpg',
         category: 'Workplace',
         detail: ['Fooddography', 'Studio Apartment Renovation', '2026'],
+        location: 'New York',
         year: '2026'
     }
 ]
 
 const archiveList = document.querySelector('.archive-list');
+const archiveTextList = document.querySelector('.archive-text-list');
 const actions = document.querySelector('.actions');
 const dropdowns = [];
 const filters = {
     category: null,
     time: null
 };
+let currentView = 'Images';
 
 function syncBodyHeight() {
-    const archiveListBottom = archiveList.getBoundingClientRect().bottom + window.scrollY;
-    document.body.style.height = `${archiveListBottom}px`;
+    const visibleList = currentView === 'Images' ? archiveList : archiveTextList;
+    const listBottom = visibleList.getBoundingClientRect().bottom + window.scrollY;
+    document.body.style.height = `${listBottom}px`;
 }
 
-new ResizeObserver(syncBodyHeight).observe(archiveList);
+function setArchiveView(view) {
+    currentView = view;
+    archiveList.style.display = view === 'Images' ? 'flex' : 'none';
+    archiveTextList.style.display = view === 'Index' ? 'block' : 'none';
+    syncBodyHeight();
+}
+
+const archiveListObserver = new ResizeObserver(syncBodyHeight);
+archiveListObserver.observe(archiveList);
+archiveListObserver.observe(archiveTextList);
 window.addEventListener('resize', syncBodyHeight);
 
 function renderArchiveList() {
@@ -89,17 +107,18 @@ function renderArchiveList() {
         data = data.filter((item) => item.category == filters.category);
     }
 
-    if (filters.time == 'From new to old') {
+    if (filters.time == 'Latest') {
         data.sort((a, b) => Number(b.year) - Number(a.year));
-    } else if (filters.time == 'From Old to New') {
+    } else if (filters.time == 'Previous') {
         data.sort((a, b) => Number(a.year) - Number(b.year));
     } else {
         data.sort((a, b) => a.detail[0].localeCompare(b.detail[0]));
     }
 
     archiveList.innerHTML = '';
+    archiveTextList.innerHTML = '';
 
-    data.forEach(({ cover, hover, detail }) => {
+    data.forEach(({ cover, hover, category, detail, year, location }) => {
         const archiveItem = document.createElement('div');
         archiveItem.className = 'archive-item';
         const archiveImg = document.createElement('img');
@@ -124,6 +143,56 @@ function renderArchiveList() {
 
         archiveItem.appendChild(archiveItemDetail);
         archiveList.appendChild(archiveItem);
+
+        const textItem = document.createElement('div');
+        textItem.className = 'a-t-item';
+        const textImage = document.createElement('div');
+        textImage.className = 'a-t-image';
+        const textImg = document.createElement('img');
+        textImg.src = cover;
+        textImg.alt = detail[0];
+        textImage.appendChild(textImg);
+
+        const textDetail = document.createElement('div');
+        textDetail.className = 'a-t-detail';
+        const textFields = [
+            ['a-t-name', detail[0]],
+            ['a-t-service', category],
+            ['a-t-location', location || ''],
+            ['a-t-year', year || detail[2]]
+        ];
+        textFields.forEach(([className, text]) => {
+            const field = document.createElement('div');
+            field.className = className;
+            field.textContent = text;
+            textDetail.appendChild(field);
+        });
+
+        const updateImagePosition = () => {
+            const detailRect = textDetail.getBoundingClientRect();
+            const imageHeight = textImg.offsetHeight;
+            const spaceBelow = window.innerHeight - detailRect.top;
+            const spaceAbove = detailRect.bottom;
+            const useTop = spaceBelow >= imageHeight || spaceBelow >= spaceAbove;
+            textImg.classList.toggle('top', useTop);
+            textImg.classList.toggle('bottom', !useTop);
+        };
+
+        textDetail.addEventListener('mouseenter', () => {
+            textImg.classList.add('visible');
+            updateImagePosition();
+        });
+        textDetail.addEventListener('mouseleave', () => {
+            textImg.classList.remove('visible');
+        });
+        textImg.addEventListener('load', () => {
+            if (textImg.classList.contains('visible')) {
+                updateImagePosition();
+            }
+        });
+
+        textItem.append(textImage, textDetail);
+        archiveTextList.appendChild(textItem);
     });
 
     const emptyCount = 4 - (data.length % 4);
@@ -175,7 +244,9 @@ filterData.forEach(({ label, key, options }) => {
             item.classList.add('selected');
             dropdown.classList.remove('open');
 
-            if (key == 'category' || key == 'time') {
+            if (key === 'index') {
+                setArchiveView(option);
+            } else if (key == 'category' || key == 'time') {
                 filters[key] = option;
                 renderArchiveList();
             }
@@ -189,7 +260,9 @@ filterData.forEach(({ label, key, options }) => {
             toggle.classList.remove('underline');
             dropdown.classList.remove('open');
 
-            if (key == 'category' || key == 'time') {
+            if (key === 'index') {
+                setArchiveView('Index');
+            } else if (key == 'category' || key == 'time') {
                 filters[key] = null;
                 renderArchiveList();
             }
@@ -217,3 +290,4 @@ filterData.forEach(({ label, key, options }) => {
 });
 
 renderArchiveList();
+setArchiveView('Images');
