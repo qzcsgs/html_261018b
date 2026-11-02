@@ -82,11 +82,12 @@ document.addEventListener('keydown', (e) => {
         updateGlobalFs(1);
     } else if (e.key.toLowerCase() === 'a') {
         updateGlobalFs(-1);
-    } else if (e.key.toLowerCase() === 'e') {
-        updatePaddingH(1);
-    } else if (e.key.toLowerCase() === 'd') {
-        updatePaddingH(-1);
     }
+    // else if (e.key.toLowerCase() === 'e') {
+    //     updatePaddingH(1);
+    // } else if (e.key.toLowerCase() === 'd') {
+    //     updatePaddingH(-1);
+    // }
 });
 
 const revealObserver = new IntersectionObserver((entries) => {
