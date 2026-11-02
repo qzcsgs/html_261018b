@@ -74,6 +74,14 @@ const filters = {
     time: null
 };
 
+function syncBodyHeight() {
+    const archiveListBottom = archiveList.getBoundingClientRect().bottom + window.scrollY;
+    document.body.style.height = `${archiveListBottom}px`;
+}
+
+new ResizeObserver(syncBodyHeight).observe(archiveList);
+window.addEventListener('resize', syncBodyHeight);
+
 function renderArchiveList() {
     let data = archiveData.slice();
 

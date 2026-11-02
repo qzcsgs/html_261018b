@@ -23,13 +23,14 @@ header .dot.right {
 }
 
 .filter {
-  position: relative;
+  position: absolute;
   display: flex;
-  margin-top: calc(var(--padding-h) * 9);
+  top: calc(var(--padding-h) * 11);
 }
 
 .filter .filter-title {
   font-size: 46px;
+  line-height: 0.9;
 }
 
 .filter .actions {
@@ -133,10 +134,13 @@ header .dot.right {
 }
 
 .archive-list {
+  position: absolute;
+  top: var(--archive-list-pt);
+  left: var(--page-padding);
+  right: var(--page-padding);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-top: calc(var(--archive-list-pt) - 5px);
 }
 
 .archive-item {
