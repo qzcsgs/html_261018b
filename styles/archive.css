@@ -1,27 +1,3 @@
-header {
-  position: relative;
-  width: 100%;
-  margin-top: var(--padding-h);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  line-height: 1;
-}
-
-header .dot {
-  background-color: #000;
-}
-
-header .dot.left {
-  left: calc(var(--padding-8w) * 2);
-  transform: translate(-50%, -50%);
-}
-
-header .dot.right {
-  right: calc(var(--padding-8w) * 2);
-  transform: translate(50%, -50%);
-}
-
 .filter {
   position: absolute;
   display: flex;
@@ -161,7 +137,7 @@ header .dot.right {
   position: absolute;
   left: 0;
   width: calc(var(--padding-8w) * 2 - calc(var(--page-padding) / 2));
-  height: calc(var(--padding-h) * 20);
+  height: calc(var(--padding-h) * 24);
   object-fit: cover;
   display: none;
 }
@@ -228,7 +204,7 @@ header .dot.right {
 
 .archive-item .cover {
   width: 100%;
-  height: calc(var(--padding-h) * 20);
+  height: calc(var(--padding-h) * 24);
   object-fit: cover;
 }
 
@@ -244,13 +220,13 @@ header .dot.right {
 
 .archive-item .hover-img img {
   width: 100%;
-  height: calc(var(--padding-h) * 20);
+  height: calc(var(--padding-h) * 24);
   object-fit: cover;
   display: block;
 }
 
 .archive-item:hover .hover-img {
-  height: calc(var(--padding-h) * 20);
+  height: calc(var(--padding-h) * 24);
 }
 
 .archive-item.empty {

@@ -1,35 +1,3 @@
-header {
-  position: fixed;
-  width: 100%;
-  top: var(--padding-h);
-  left: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 var(--page-padding) 0;
-  line-height: 1;
-  mix-blend-mode: difference;
-}
-
-header * {
-  color: #ccc !important;
-}
-
-header .dot {
-  background-color: #ccc;
-}
-
-header .dot.left {
-  left: calc(var(--padding-8w) * 2 + var(--page-padding));
-  transform: translate(-50%, -50%);
-}
-
-header .dot.right {
-  right: calc(var(--padding-8w) * 2 + var(--page-padding));
-  transform: translate(50%, -50%);
-}
-
 .home-img {
   position: relative;
   margin: 0 auto calc(var(--padding-h) / 2);
