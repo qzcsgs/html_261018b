@@ -47,6 +47,23 @@ const archiveData = [
         year: '2026'
     },
     {
+        cover: 'images/Archive/Residential/Amangiri/1.jpg',
+        hover: 'images/Archive/Residential/Amangiri/2.jpg',
+        category: 'Residential',
+        detail: ['Amangiri', 'far elldorf architects', '2026'],
+        location: 'Paris',
+        year: '2026'
+    },
+    {
+        cover: 'images/Archive/Residential/Arthouse/1.jpg',
+        hover: 'images/Archive/Residential/Arthouse/2.jpg',
+        category: 'Residential',
+        detail: ['Arthouse', 'bedroom indamine', '2025'],
+        location: 'New York',
+        year: '2025'
+    },
+
+    {
         cover: 'images/Archive/Workplace/Pivot/1.jpg',
         hover: 'images/Archive/Workplace/Pivot/2.jpg',
         category: 'Workplace',
@@ -67,6 +84,30 @@ const archiveData = [
         hover: 'images/Archive/Workplace/Fooddography/2.jpg',
         category: 'Workplace',
         detail: ['Fooddography', 'Studio Apartment Renovation', '2026'],
+        location: 'New York',
+        year: '2026'
+    },
+    {
+        cover: 'images/Archive/Workplace/Encase/1.jpg',
+        hover: 'images/Archive/Workplace/Encase/2.jpg',
+        category: 'Workplace',
+        detail: ['Encase', 'Architecture Workshop', '2026'],
+        location: 'Paris',
+        year: '2026'
+    },
+    {
+        cover: 'images/Archive/Workplace/NYU_Tandon/1.jpg',
+        hover: 'images/Archive/Workplace/NYU_Tandon/2.jpg',
+        category: 'Workplace',
+        detail: ['NYU', 'Tandon hall grimshaw', '2026'],
+        location: 'New York',
+        year: '2026'
+    },
+    {
+        cover: 'images/Archive/Workplace/Portneravenue/1.jpg',
+        hover: 'images/Archive/Workplace/Portneravenue/2.jpg',
+        category: 'Workplace',
+        detail: ['Portneravenue', 'Udetail Architecture Workshop', '2026'],
         location: 'New York',
         year: '2026'
     }
