@@ -125,15 +125,15 @@ const filters = {
 let currentView = 'Images';
 
 function syncBodyHeight() {
-    const visibleList = currentView === 'Images' ? archiveList : archiveTextList;
+    const visibleList = currentView == 'Images' ? archiveList : archiveTextList;
     const listBottom = visibleList.getBoundingClientRect().bottom + window.scrollY;
     document.body.style.height = `${listBottom}px`;
 }
 
 function setArchiveView(view) {
     currentView = view;
-    archiveList.style.display = view === 'Images' ? 'flex' : 'none';
-    archiveTextList.style.display = view === 'Index' ? 'block' : 'none';
+    archiveList.style.display = view == 'Images' ? 'flex' : 'none';
+    archiveTextList.style.display = view == 'Index' ? 'block' : 'none';
     renderArchiveList();
     syncBodyHeight();
 }
@@ -148,34 +148,42 @@ function renderArchiveList() {
 
     data.sort((a, b) => a.detail[0].localeCompare(b.detail[0]));
 
-    if (currentView === 'Images') {
+    if (currentView == 'Images') {
         if (filters.category) {
-            data = data.filter((item) => item.category === filters.category);
+            data = data.filter((item) => item.category == filters.category);
         }
         if (filters.location) {
-            data = data.filter((item) => item.location === filters.location);
+            data = data.filter((item) => item.location == filters.location);
         }
     } else {
         if (filters.category) {
-            data.sort((a, b) => Number(b.category === filters.category) - Number(a.category === filters.category));
+            data.sort((a, b) => Number(b.category == filters.category) - Number(a.category == filters.category));
         }
         if (filters.location) {
-            data.sort((a, b) => Number(b.location === filters.location) - Number(a.location === filters.location));
+            data.sort((a, b) => Number(b.location == filters.location) - Number(a.location == filters.location));
         }
     }
 
-    if (filters.time === 'Latest') {
+    if (filters.time == 'Latest') {
         data.sort((a, b) => Number(b.year) - Number(a.year));
-    } else if (filters.time === 'Previous') {
+    } else if (filters.time == 'Previous') {
         data.sort((a, b) => Number(a.year) - Number(b.year));
     }
 
     archiveList.innerHTML = '';
     archiveTextList.innerHTML = '';
 
-    data.forEach(({ cover, hover, category, detail, year, location }) => {
+    data.forEach(({ cover, hover, category, detail, year, location }, index) => {
         const archiveItem = document.createElement('div');
         archiveItem.className = 'archive-item';
+        const column = index % 4;
+        if (column == 0) {
+            archiveItem.classList.add('pr');
+        } else if (column == 3) {
+            archiveItem.classList.add('pl');
+        } else {
+            archiveItem.classList.add('pl', 'pr');
+        }
         const archiveImg = document.createElement('img');
         archiveImg.src = cover;
         archiveImg.className = 'cover';
@@ -299,7 +307,7 @@ filterData.forEach(({ label, key, options }) => {
             item.classList.add('selected');
             dropdown.classList.remove('open');
 
-            if (key === 'index') {
+            if (key == 'index') {
                 setArchiveView(option);
             } else if (key == 'category' || key == 'location' || key == 'time') {
                 filters[key] = option;
@@ -315,7 +323,7 @@ filterData.forEach(({ label, key, options }) => {
             toggle.classList.remove('underline');
             dropdown.classList.remove('open');
 
-            if (key === 'index') {
+            if (key == 'index') {
                 setArchiveView('Index');
             } else if (key == 'category' || key == 'location' || key == 'time') {
                 filters[key] = null;
