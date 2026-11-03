@@ -50,15 +50,15 @@ const archiveData = [
         cover: 'images/Archive/Residential/Amangiri/1.jpg',
         hover: 'images/Archive/Residential/Amangiri/2.jpg',
         category: 'Residential',
-        detail: ['Amangiri', 'far elldorf architects', '2026'],
+        detail: ['Amangiri', 'Far Elldorf Architects', '2026'],
         location: 'Paris',
         year: '2026'
     },
     {
-        cover: 'images/Archive/Residential/Arthouse/1.jpg',
-        hover: 'images/Archive/Residential/Arthouse/2.jpg',
+        cover: 'images/Archive/Residential/Arthouse/2.jpg',
+        hover: 'images/Archive/Residential/Arthouse/1.jpg',
         category: 'Residential',
-        detail: ['Arthouse', 'bedroom indamine', '2025'],
+        detail: ['Arthouse', 'Bedroom Indamine', '2025'],
         location: 'New York',
         year: '2025'
     },
@@ -80,8 +80,8 @@ const archiveData = [
         year: '2026'
     },
     {
-        cover: 'images/Archive/Workplace/Fooddography/1.jpg',
-        hover: 'images/Archive/Workplace/Fooddography/2.jpg',
+        cover: 'images/Archive/Workplace/Fooddography/2.jpg',
+        hover: 'images/Archive/Workplace/Fooddography/1.jpg',
         category: 'Workplace',
         detail: ['Fooddography', 'Studio Apartment Renovation', '2026'],
         location: 'New York',
@@ -96,10 +96,10 @@ const archiveData = [
         year: '2026'
     },
     {
-        cover: 'images/Archive/Workplace/NYU_Tandon/1.jpg',
-        hover: 'images/Archive/Workplace/NYU_Tandon/2.jpg',
+        cover: 'images/Archive/Workplace/NYU_Tandon/2.jpg',
+        hover: 'images/Archive/Workplace/NYU_Tandon/1.jpg',
         category: 'Workplace',
-        detail: ['NYU', 'Tandon hall grimshaw', '2026'],
+        detail: ['NYU', 'Tandon Hall Grimshaw', '2026'],
         location: 'New York',
         year: '2026'
     },
