@@ -353,3 +353,7 @@ filterData.forEach(({ label, key, options }) => {
 });
 
 setArchiveView('Images');
+
+const selectedLink = document.querySelector('.selected-archive .selected');
+const target = new URLSearchParams(window.location.search).get('target');
+selectedLink.href = target === '2' ? '/awpc2.html' : '/index.html';
