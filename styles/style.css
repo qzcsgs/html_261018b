@@ -198,11 +198,18 @@ header {
   align-items: flex-end;
   padding: 0 var(--page-padding) 0;
   line-height: 1;
+}
+
+header.mixin {
   mix-blend-mode: difference;
 }
 
-header * {
+header.mixin * {
   color: #ccc !important;
+}
+
+header * {
+  color: #fff !important;
 }
 
 header .dot {
